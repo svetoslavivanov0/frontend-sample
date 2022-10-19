@@ -1,26 +1,42 @@
-import logo from './logo.svg';
+/**
+ * External dependencies
+ */
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+
+/**
+ * Internal dependencies
+ */
+import Protected from './Protected';
+import Dashboard from './Dashboard';
+import Login from './components/Login';
+import Register from './components/Register';
+import Admin from './components/Admin';
+import AuthService from './services/auth';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          test
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+    const isLoggedIn = AuthService.isLoggedIn();
+
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={
+                    <Protected isLoggedIn={isLoggedIn}>
+                        <Dashboard/>
+                    </Protected>
+                }/>
+                <Route path="/admin" element={
+                    <Protected isLoggedIn={isLoggedIn}>
+                        <Admin/>
+                    </Protected>
+                }/>
+
+                <Route path="/login" element={<Login/>}/>
+
+                <Route path="/register" element={<Register/>}/>
+            </Routes>
+        </BrowserRouter>
+    );
 }
 
 export default App;
