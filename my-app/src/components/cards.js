@@ -53,6 +53,11 @@ const Cards = ({ posts, fetchPosts }) => {
                                             See More
                                         </Link>
                                     </Card.Link>
+                                    <Card.Link>
+                                        <Link to={'/post/' + post.id + '/edit'}>
+                                            Edit
+                                        </Link>
+                                    </Card.Link>
                                     <Card.Link onClick={() => handleDeletePost(post.id)} href="#">Delete</Card.Link>
                                 </Card.Body>
                             </Card>

@@ -14,6 +14,8 @@ import './App.css';
 import Sidebar from './components/Sidebar';
 import MyPosts from './layouts/my-posts';
 import AllPosts from './layouts/all-posts';
+import SinglePost from './components/SinglePost';
+import PostUpdate from './components/PostUpdate';
 
 const App = () => {
     const isLoggedIn = AuthService.isLoggedIn();
@@ -36,6 +38,18 @@ const App = () => {
                         <MyPosts/>
                     </Protected>
                 }/>
+                <Route path="/post/:id" element={
+                    <Protected isLoggedIn={isLoggedIn}>
+                        <SinglePost/>
+                    </Protected>
+                }/>
+
+                <Route path="/post/:id/edit" element={
+                    <Protected isLoggedIn={isLoggedIn}>
+                        <PostUpdate/>
+                    </Protected>
+                }
+                />
 
                 <Route path="/login" element={<Login/>}/>
 
