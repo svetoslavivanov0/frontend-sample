@@ -7,27 +7,33 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
  * Internal dependencies
  */
 import Protected from './Protected';
-import Dashboard from './Dashboard';
 import Login from './components/Login';
 import Register from './components/Register';
-import Admin from './components/Admin';
 import AuthService from './services/auth';
 import './App.css';
+import Sidebar from './components/Sidebar';
+import MyPosts from './layouts/my-posts';
+import AllPosts from './layouts/all-posts';
 
 const App = () => {
     const isLoggedIn = AuthService.isLoggedIn();
 
     return (
         <BrowserRouter>
+            {isLoggedIn ?
+                <Sidebar/>
+                : <></>
+            }
+
             <Routes>
                 <Route path="/" element={
                     <Protected isLoggedIn={isLoggedIn}>
-                        <Dashboard/>
+                        <AllPosts/>
                     </Protected>
                 }/>
-                <Route path="/admin" element={
+                <Route path="/my-posts" element={
                     <Protected isLoggedIn={isLoggedIn}>
-                        <Admin/>
+                        <MyPosts/>
                     </Protected>
                 }/>
 

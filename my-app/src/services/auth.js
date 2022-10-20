@@ -16,8 +16,12 @@ const login = (data) => {
     });
 }
 
+const getToken = () => {
+    return localStorage.getItem('jwt');
+}
+
 const isLoggedIn = () => {
-    return !!localStorage.getItem('jwt');
+    return !!getToken();
 }
 
 const register = (data) => {
@@ -32,11 +36,20 @@ const logout = () => {
     return localStorage.removeItem('jwt');
 }
 
+const baseConfig = {
+    headers: {
+        'Authorization': 'Bearer ' + getToken()
+    }
+};
+
 const AuthService = {
     login,
     register,
     isLoggedIn,
-    logout
+    logout,
+    getToken,
+    baseUrl,
+    baseConfig
 }
 
 export default AuthService;

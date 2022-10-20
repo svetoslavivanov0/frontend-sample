@@ -53,7 +53,7 @@ const Login = () => {
             if (response.data?.token) {
                 window.localStorage.setItem('jwt', response.data.token);
 
-                navigate("/admin");
+                navigate("/");
                 window.location.reload();
             } else {
                 setError('Error.')

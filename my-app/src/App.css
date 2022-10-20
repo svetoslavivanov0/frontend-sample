@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+
+.layout {
+  padding-left: 260px;
+  color: #fff;
+  min-height: 100vh;
+  background-color: orange;
+}
+
+.sidebar {
+  position: fixed !important;
+  left: 0;
+  top: 0;
+  min-height: 100vh;
+  background-color: blue;
+}
