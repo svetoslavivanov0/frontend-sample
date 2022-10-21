@@ -22,7 +22,7 @@ const PostForm = ({ handleSubmit, defaultPostData }) => {
         setPostData(prev => {
             return {
                 ...prev,
-                [e.target.t]: e.target.value
+                [e.target.name]: e.target.value
             }
         })
     };

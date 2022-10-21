@@ -24,6 +24,7 @@ const PostUpdate = () => {
 
     const updatePost = async (data) => {
         await baseRequest.post(`/api/posts/${post.id}/update`, data);
+        alert('Success!');
     }
 
     useEffect(() => {
