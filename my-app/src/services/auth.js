@@ -3,11 +3,12 @@
  */
 import axios from "axios";
 
+
 /**
  * Internal dependencies
  */
 
-const baseUrl = 'http://localhost:8000/';
+const baseUrl = process.env.REACT_APP_BASE_URL;
 
 const login = (data) => {
     return axios.post(baseUrl + 'login', {
