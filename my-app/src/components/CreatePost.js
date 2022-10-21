@@ -7,6 +7,10 @@ const CreatePost = () => {
     const navigate = useNavigate();
 
     const createPost = async (postData) => {
+        if (!postData.title || !postData.content) {
+            alert('Please add some content!');
+            return;
+        }
         const result = await baseRequest.post(`/api/posts/create`, postData);
         navigate(`/post/${result.data?.post_id}`);
     }
