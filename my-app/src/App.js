@@ -10,7 +10,7 @@ import Protected from './Protected';
 import Login from './components/Login';
 import Register from './components/Register';
 import AuthService from './services/auth';
-import './App.css';
+import './App.scss';
 import Sidebar from './components/Sidebar';
 import MyPosts from './layouts/my-posts';
 import AllPosts from './layouts/all-posts';
