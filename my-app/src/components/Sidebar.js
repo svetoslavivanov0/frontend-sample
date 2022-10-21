@@ -20,6 +20,12 @@ const SidebarLayout = () => {
                         </Link>
                     </MenuItem>
 
+                    <MenuItem>
+                        <Link to="/create-post">
+                            Create post
+                        </Link>
+                    </MenuItem>
+
                     <MenuItem> Logout</MenuItem>
                 </Menu>
             </Sidebar>

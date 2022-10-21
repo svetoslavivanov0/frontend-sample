@@ -16,6 +16,7 @@ import MyPosts from './layouts/my-posts';
 import AllPosts from './layouts/all-posts';
 import SinglePost from './components/SinglePost';
 import PostUpdate from './components/PostUpdate';
+import CreatePost from './components/CreatePost';
 
 const App = () => {
     const isLoggedIn = AuthService.isLoggedIn();
@@ -50,6 +51,12 @@ const App = () => {
                     </Protected>
                 }
                 />
+
+                <Route path="/create-post" element={
+                    <Protected isLoggedIn={isLoggedIn}>
+                        <CreatePost/>
+                    </Protected>
+                }/>
 
                 <Route path="/login" element={<Login/>}/>
 
