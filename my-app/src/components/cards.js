@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col';
 import { Link } from 'react-router-dom';
 import baseRequest from '../services/baseRequest';
 
-const Cards = ({ posts, fetchPosts }) => {
+const Cards = ({ posts, fetchPosts, canUpdate = true }) => {
     const chunkSize = 3;
     const postsToShow = [];
     for (let i = 0; i < posts.length; i += chunkSize) {
@@ -41,6 +41,8 @@ const Cards = ({ posts, fetchPosts }) => {
                                     </Card.Title>
 
                                     <Card.Subtitle className="mb-2 text-success">
+                                        {!canUpdate && post.author + ' - '}
+
                                         {post.createdAt}
                                     </Card.Subtitle>
 
@@ -53,12 +55,17 @@ const Cards = ({ posts, fetchPosts }) => {
                                             See More
                                         </Link>
                                     </Card.Link>
-                                    <Card.Link>
-                                        <Link to={'/post/' + post.id + '/edit'}>
-                                            Edit
-                                        </Link>
-                                    </Card.Link>
-                                    <Card.Link onClick={() => handleDeletePost(post.id)} href="#">Delete</Card.Link>
+                                    {canUpdate &&
+                                        <Card.Link>
+                                            <Link to={'/post/' + post.id + '/edit'}>
+                                                Edit
+                                            </Link>
+                                        </Card.Link>
+                                    }
+
+                                    {canUpdate &&
+                                        <Card.Link onClick={() => handleDeletePost(post.id)} href="#">Delete</Card.Link>
+                                    }
                                 </Card.Body>
                             </Card>
                         </Col>
