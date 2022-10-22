@@ -38,7 +38,11 @@ const SidebarLayout = () => {
                         </Link>
                     </MenuItem>
 
-                    <MenuItem> Logout</MenuItem>
+                    <MenuItem>
+                        <Link to="/logout">
+                            Logout
+                        </Link>
+                    </MenuItem>
                 </Menu>
             </Sidebar>
         </div>
