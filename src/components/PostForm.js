@@ -19,9 +19,12 @@ const PostForm = ({ handleSubmit, defaultPostData }) => {
             title: defaultPostData?.title,
             content: defaultPostData?.content
         })
+
+        console.log(postData    )
     }, [defaultPostData]);
 
     const onChangeHandler = (e) => {
+        console.log('tuk')
         setPostData(prev => {
             return {
                 ...prev,
@@ -48,7 +51,7 @@ const PostForm = ({ handleSubmit, defaultPostData }) => {
                 <Form.Control
                     type="text"
                     name="title"
-                    defaultValue={postData.title}
+                    value={postData.title}
                     onChange={(e) => onChangeHandler(e)}
                 />
             </Form.Group>
@@ -61,7 +64,7 @@ const PostForm = ({ handleSubmit, defaultPostData }) => {
                 <Form.Control
                     as="textarea"
                     name="content"
-                    defaultValue={postData.content}
+                    value={postData.content}
                     onChange={(e) => onChangeHandler(e)}
                     rows={10}
                 />

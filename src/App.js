@@ -17,6 +17,7 @@ import AllPosts from './pages/AllPosts';
 import SinglePost from './pages/SinglePost';
 import PostUpdate from './pages/PostUpdate';
 import CreatePost from './pages/CreatePost';
+import NotFound from './pages/NotFound';
 
 const App = () => {
     const isLoggedIn = AuthService.isLoggedIn();
@@ -61,6 +62,12 @@ const App = () => {
                 <Route path="/login" element={<Login/>}/>
 
                 <Route path="/register" element={<Register/>}/>
+
+                <Route path='*' exact={true} element={
+                    <Protected isLoggedIn={isLoggedIn}>
+                        <AllPosts/>
+                    </Protected>
+                }/>
             </Routes>
         </BrowserRouter>
     );
