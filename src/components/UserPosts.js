@@ -17,12 +17,12 @@ const UserPosts = () => {
     const [page, setPage] = useState(1);
     const [showLoadMoreButton, setShowLoadMoreButton] = useState(false);
 
-    const fetchPosts = async () => {
+    const fetchPosts = async (shouldRefreshPosts = false) => {
         setLoading(true);
 
         axios.get(Auth.baseUrl + 'api/posts', {
             params: {
-                page
+                page: shouldRefreshPosts ? 1 : page
             }
         })
             .then((response) => {
@@ -43,7 +43,7 @@ const UserPosts = () => {
                 })
 
                 setPosts((prevState) => {
-                    return prevState ? [...prevState, ...newPosts] : newPosts;
+                    return prevState && !shouldRefreshPosts ? [...prevState, ...newPosts] : newPosts;
                 });
             }).finally(() => {
             setLoading(false);

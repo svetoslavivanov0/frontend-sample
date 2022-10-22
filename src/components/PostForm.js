@@ -24,7 +24,6 @@ const PostForm = ({ handleSubmit, defaultPostData }) => {
     }, [defaultPostData]);
 
     const onChangeHandler = (e) => {
-        console.log('tuk')
         setPostData(prev => {
             return {
                 ...prev,
@@ -36,6 +35,7 @@ const PostForm = ({ handleSubmit, defaultPostData }) => {
     const submitForm = async () => {
         try {
             await handleSubmit(postData);
+            setError(false);
         } catch (e) {
             setError(e.response?.data?.message);
         }

@@ -24,10 +24,9 @@ const Cards = ({ posts, fetchPosts, canUpdate = true }) => {
         if (window.confirm('Sure?')) {
             try {
                 const result = await baseRequest.delete(`/api/posts/${postId}/delete`);
-                if (result.status === 200) {
-                    alert('Success!');
-                    fetchPosts();
-                }
+                alert('Success!');
+
+                fetchPosts(true)
             } catch (e) {
 
             }
