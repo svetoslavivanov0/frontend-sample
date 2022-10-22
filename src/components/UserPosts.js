@@ -1,8 +1,15 @@
+/**
+ * External dependencies
+ */
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import Auth from '../services/auth';
-import Cards from './cards';
 import { Button } from 'react-bootstrap';
+
+/**
+ * Internal dependencies
+ */
+import Auth from '../services/auth';
+import Cards from './Cards';
 
 const UserPosts = () => {
     const [posts, setPosts] = useState('');

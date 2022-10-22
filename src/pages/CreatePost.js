@@ -1,7 +1,14 @@
+/**
+ * External dependencies
+ */
+import { useNavigate } from 'react-router-dom';
+
+/**
+ * Internal dependencies
+ */
 import Layout from '../layouts/layout';
 import baseRequest from '../services/baseRequest';
-import { useNavigate } from 'react-router-dom';
-import PostForm from './PostForm';
+import PostForm from '../components/PostForm';
 
 const CreatePost = () => {
     const navigate = useNavigate();

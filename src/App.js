@@ -7,16 +7,16 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
  * Internal dependencies
  */
 import Protected from './Protected';
-import Login from './components/Login';
-import Register from './components/Register';
+import Login from './pages/Login';
+import Register from './pages/Register';
 import AuthService from './services/auth';
 import './App.scss';
 import Sidebar from './components/Sidebar';
-import MyPosts from './layouts/my-posts';
-import AllPosts from './layouts/all-posts';
-import SinglePost from './components/SinglePost';
-import PostUpdate from './components/PostUpdate';
-import CreatePost from './components/CreatePost';
+import MyPosts from './pages/MyPosts';
+import AllPosts from './pages/AllPosts';
+import SinglePost from './pages/SinglePost';
+import PostUpdate from './pages/PostUpdate';
+import CreatePost from './pages/CreatePost';
 
 const App = () => {
     const isLoggedIn = AuthService.isLoggedIn();

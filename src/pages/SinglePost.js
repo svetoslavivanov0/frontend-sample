@@ -1,7 +1,14 @@
-import Layout from '../layouts/layout';
+/**
+ * External dependencies
+ */
 import React, { useEffect, useRef, useState } from 'react';
-import baseRequest from '../services/baseRequest';
 import { useNavigate, useParams } from 'react-router-dom';
+
+/**
+ * Internal dependencies
+ */
+import Layout from '../layouts/layout';
+import baseRequest from '../services/baseRequest';
 import Card from 'react-bootstrap/Card';
 
 const SinglePost = () => {

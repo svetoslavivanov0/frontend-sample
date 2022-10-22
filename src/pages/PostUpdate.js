@@ -1,8 +1,15 @@
-import Layout from '../layouts/layout';
+/**
+ * External dependencies
+ */
 import { useEffect, useState } from 'react';
-import baseRequest from '../services/baseRequest';
 import { useNavigate, useParams } from 'react-router-dom';
-import PostForm from './PostForm';
+
+/**
+ * Internal dependencies
+ */
+import Layout from '../layouts/layout';
+import baseRequest from '../services/baseRequest';
+import PostForm from '../components/PostForm';
 
 const PostUpdate = () => {
     const [post, setPost] = useState(null);

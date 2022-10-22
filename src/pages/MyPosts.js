@@ -1,8 +1,8 @@
 /**
- * External dependenices
+ * External dependencies
  */
 import React from 'react';
-import Layout from './layout';
+import Layout from '../layouts/layout';
 import UserPosts from '../components/UserPosts';
 
 /**

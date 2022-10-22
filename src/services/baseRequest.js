@@ -1,4 +1,11 @@
+/**
+ * External dependencies
+ */
 import axios from 'axios';
+
+/**
+ * Internal dependencies
+ */
 import auth from './auth';
 
 // Add a request interceptor

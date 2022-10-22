@@ -1,5 +1,12 @@
+/**
+ * External dependencies
+ */
 import { Sidebar, Menu, MenuItem } from 'react-pro-sidebar';
 import { Link } from 'react-router-dom';
+
+/**
+ * Internal dependencies
+ */
 
 const SidebarLayout = () => {
     return (

@@ -1,5 +1,12 @@
+/**
+ * External dependencies
+ */
 import React from 'react';
-import Layout from './layout';
+
+/**
+ * Internal dependencies
+ */
+import Layout from '../layouts/layout';
 import Posts from '../components/Posts';
 
 const AllPosts = () => {
