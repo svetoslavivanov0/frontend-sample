@@ -60,9 +60,21 @@ const App = () => {
                     </Protected>
                 }/>
 
-                <Route path="/login" element={<Login/>}/>
+                {
+                    isLoggedIn ? (
+                            <Route path="/login" element={<AllPosts/>}/>
+                        ) :
+                        <Route path="/login" element={<Login/>}
+                        />
+                }
 
-                <Route path="/register" element={<Register/>}/>
+                {
+                    isLoggedIn ? (
+                            <Route path="/register" element={<AllPosts/>}/>
+                        ) :
+                        <Route path="/register" element={<Register/>}
+                        />
+                }
 
                 <Route path="/logout" element={<Logout/>}/>
 
