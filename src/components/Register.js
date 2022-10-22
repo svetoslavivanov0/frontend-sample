@@ -1,7 +1,7 @@
 /**
  * External dependencies
  */
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {
     MDBContainer,
     MDBInput,
@@ -13,7 +13,6 @@ import { Link, useNavigate } from "react-router-dom";
 /**
  * Internal dependencies
  */
-import AuthService from '../services/auth';
 import auth from '../services/auth';
 
 const Register = () => {

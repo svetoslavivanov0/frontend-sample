@@ -1,4 +1,3 @@
-import Cards from './cards';
 import Layout from '../layouts/layout';
 import React, { useEffect, useRef, useState } from 'react';
 import baseRequest from '../services/baseRequest';
