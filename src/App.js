@@ -18,6 +18,7 @@ import SinglePost from './pages/SinglePost';
 import PostUpdate from './pages/PostUpdate';
 import CreatePost from './pages/CreatePost';
 import NotFound from './pages/NotFound';
+import Logout from './pages/Logout';
 
 const App = () => {
     const isLoggedIn = AuthService.isLoggedIn();
@@ -62,6 +63,8 @@ const App = () => {
                 <Route path="/login" element={<Login/>}/>
 
                 <Route path="/register" element={<Register/>}/>
+
+                <Route path="/logout" element={<Logout/>}/>
 
                 <Route path='*' exact={true} element={
                     <Protected isLoggedIn={isLoggedIn}>
