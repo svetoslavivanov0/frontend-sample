@@ -18,7 +18,6 @@ const Posts = () => {
             }
         })
             .then((response) => {
-                console.log(response)
                 if (!!response.data?.hasMorePosts) {
                     setPage(page + 1);
                     setShowLoadMoreButton(true);
@@ -38,6 +37,14 @@ const Posts = () => {
                 setPosts((prevState) => {
                     return prevState ? [...prevState, ...newPosts] : newPosts;
                 });
+
+                setTimeout(() => {
+                    window.scroll({
+                        top: document.body.offsetHeight,
+                        left: 0,
+                        behavior: 'smooth',
+                    });
+                }, 100)
             }).finally(() => {
             setLoading(false);
         });
